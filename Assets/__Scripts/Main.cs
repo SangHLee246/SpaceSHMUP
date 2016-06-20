@@ -39,7 +39,7 @@ public class Main : MonoBehaviour {
 	public void SpawnEnemy(){
 		//pick a random enemy prefab to instantiate
 		int ndx = Random.Range (0,prefabEnemies.Length);
-		GameObject go = Instantiate (prefabEnemies[ndx])as GameObject ;
+		GameObject go = Instantiate( prefabEnemies[ ndx ] )as GameObject;
 		//position the Enemy above the screen with a random x positions
 		Vector3 pos = Vector3.zero;
 		float xMin = Utils.camBounds.min.x + enemySpawnPadding;

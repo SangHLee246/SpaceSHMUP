@@ -21,7 +21,7 @@ public class Utils : MonoBehaviour
 			return (b0);
 		}
 
-		// else combine them
+		//Stretch b0 to include the b1.min and b1.max
 		b0.Encapsulate (b1.min);
 		b0.Encapsulate (b1.max);
 		return (b0);
@@ -30,6 +30,7 @@ public class Utils : MonoBehaviour
 
 	public static Bounds CombineBoundsOfChildren(GameObject go) 
 	{
+		//Create an empty Bounds b
 		Bounds b = new Bounds (Vector3.zero, Vector3.zero);
 		if (go.renderer != null) {
 			b = BoundsUnion(b, go.renderer.bounds);
@@ -191,7 +192,30 @@ public class Utils : MonoBehaviour
 		return (Vector3.zero);  // if we get here something went wrong
 	
 	} // end BoundsInBoundsCheck
+
+	//This function will iteratively climb up the transform.parent tree
+	//until it either finds a parent with a tag != "Untagged" or no parent
+	public static GameObject FindTaggedParent(GameObject go) {
+		//If this gameObject has a tag
+		if (go.tag != "Untagged") {
+			//then return this gameObject
+			return(go);
+		}
+		//If there is no parent of this Transform
+		if (go.transform.parent == null) {
+			//We've reached the top of the hierarchy with no interesting tag
+			//So return null
+			return(null);
+		}
+		//Otherwise, recursively climb up the tree
+		return(FindTaggedParent(go.transform.parent.gameObject));
+	}
 	
+	//This version of the function handles things if a Transform is passed in
+	public static GameObject FindTaggedParent(Transform t) {
+		return(FindTaggedParent(t.gameObject));
+	}
+
 	
 	
 }// End of Util Class
