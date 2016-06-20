@@ -30,16 +30,16 @@ public class Main : MonoBehaviour {
 
 	void Start(){
 
-		Screen.SetResolution (630, 900, false);
+		//Screen.SetResolution (630, 900, false);
 
-		GameObject scoreGO = GameObject.Find ("ScoreCounter");
+		//GameObject scoreGO = GameObject.Find ("ScoreCounter");
 
 	}
 
 	public void SpawnEnemy(){
 		//pick a random enemy prefab to instantiate
-		int ndx = Random.Range (0,prefabEnemies.Length);
-		GameObject go = Instantiate( prefabEnemies[ ndx ] )as GameObject;
+		int ndx = Random.Range (0 , prefabEnemies.Length);
+		GameObject go = Instantiate( prefabEnemies[ ndx ] ) as GameObject;
 		//position the Enemy above the screen with a random x positions
 		Vector3 pos = Vector3.zero;
 		float xMin = Utils.camBounds.min.x + enemySpawnPadding;
