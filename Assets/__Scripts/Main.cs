@@ -9,11 +9,12 @@ public class Main : MonoBehaviour {
 	public GameObject[] prefabEnemies ;
 	public float enemySpawnPerSecond = 0.5f ;
 	public float enemySpawnPadding = 1.5f ;
+	public WeaponDefinition[] weaponDefinitions;
 
 	public bool _______________ ;
-	public float enemySpawnRate ;
 
-
+	public WeaponType[] activeWeaponTypes;
+	public float enemySpawnRate; //Delay between enemies
 
 	void Awake () {
 
@@ -29,6 +30,10 @@ public class Main : MonoBehaviour {
 
 
 	void Start(){
+		activeWeaponTypes = new WeaponType [weaponDefinitions.Length];
+		for(int i=0; i<weaponDefinitions.Length; i++) {
+			activeWeaponTypes[i] = weaponDefinitions[i].type;
+		}
 
 		//Screen.SetResolution (630, 900, false);
 
