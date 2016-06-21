@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour {
 	//This is a Property: A method that acts like a field
 	public Vector3 pos {
 		get {
-			return( this.transform.position);
+			return( this.transform.position );
 		}
 		set {
 			this.transform.position = value;
@@ -89,8 +89,7 @@ public class Enemy : MonoBehaviour {
 			//Enemies don't take damage unless they're onscreen
 			//This stops the player from shooting them before they are visible
 			bounds.center = transform.position + boundsCenterOffset;
-			if (bounds.extents == Vector3.zero || 
-			    Utils.ScreenBoundsCheck(bounds, BoundsTest.offScreen) != Vector3.zero) {
+			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck(bounds, BoundsTest.offScreen) != Vector3.zero) {
 				Destroy(other);
 				break;
 			}
