@@ -1,14 +1,14 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic ;
+﻿using UnityEngine; //Required for Unity
+using System.Collections; //Required for Arrays & other Collections
+using System.Collections.Generic ; //Required to use Lists or Dictionaries
 
 public class Main : MonoBehaviour {
 	static public Main S ;
 	static public Dictionary<WeaponType, WeaponDefinition> W_DEFS;
 
-	public GameObject[] prefabEnemies ;
-	public float enemySpawnPerSecond = 0.5f ;
-	public float enemySpawnPadding = 1.5f ;
+	public GameObject[] prefabEnemies;
+	public float enemySpawnPerSecond = 0.5f; //# Enemies/second
+	public float enemySpawnPadding = 1.5f; //Padding for position
 	public WeaponDefinition[] weaponDefinitions;
 	public GameObject prefabPowerUp;
 	public WeaponType[] powerUpFrequency = new WeaponType[] { WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield};
@@ -16,7 +16,7 @@ public class Main : MonoBehaviour {
 	public bool _______________ ;
 
 	public WeaponType[] activeWeaponTypes;
-	public float enemySpawnRate; //Delay between enemies
+	public float enemySpawnRate; //Delay between Enemy spawns
 
 	void Awake () {
 
