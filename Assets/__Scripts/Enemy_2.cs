@@ -58,9 +58,4 @@ public class Enemy_2 : Enemy {
 		//Interpolate the two linear interpolation points
 		pos = (1 - u)*points[0] + u*points[1];
 	}
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

@@ -54,8 +54,4 @@ public class Enemy_3 : Enemy {
 		p12 = (1-u)*points[1] + u*points[2];
 		pos = (1-u)*p01 + u*p12;
 	}
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

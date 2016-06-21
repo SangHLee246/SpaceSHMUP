@@ -162,8 +162,4 @@ public class Enemy_4 : Enemy {
 		m.color = Color.red;
 		remainingDamageFrames = showDamageForFrames;
 	}
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
